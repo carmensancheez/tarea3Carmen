@@ -1,0 +1,62 @@
+﻿@model tarea3CarmenSanchez.Models.Persona
+@using tarea3CarmenSanchez.Models
+
+@{
+    ViewBag.Title = "Formulario";
+}
+
+<h2>Formulario</h2>
+
+@using (Html.BeginForm("Datos", "Helper", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(a => a.Cedula)
+    @Html.TextBoxFor(b => b.Cedula, new { @class = "form-control", placeholder = "Escriba su Cedula" })
+    @Html.ValidationMessageFor(a => a.Cedula, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(a => a.Nombre)
+    @Html.TextBoxFor(b => b.Nombre, new { @class = "form-control", placeholder = "Escriba su Nombre" })
+    @Html.ValidationMessageFor(a => a.Nombre, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(a => a.Apellido)
+    @Html.TextBoxFor(b => b.Apellido, new { @class = "form-control", placeholder = "Escriba su Apellido" })
+    @Html.ValidationMessageFor(a => a.Apellido, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(a => a.Edad)
+    @Html.TextBoxFor(b => b.Edad, new { @class = "form-control", placeholder = "Escriba su Edad" })
+    @Html.ValidationMessageFor(a => a.Edad, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(a => a.Telefono)
+    @Html.TextBoxFor(b => b.Telefono, new { @class = "form-control", placeholder = "Escriba su Telefono" })
+    <br />
+    @Html.LabelFor(a => a.Correo)
+    @Html.TextBoxFor(b => b.Correo, new { @class = "form-control", placeholder = "Escriba su Correo Electrónico" })
+    @Html.ValidationMessageFor(a => a.Correo, "", new { @class = "text-danger" })
+    <br />
+    @Html.DropDownListFor(a => a.Gender, new SelectList(Enum.GetValues(typeof(Genero))), "Seleccione el Género")
+    <br />
+    @Html.Label("Soltero/a")
+    @Html.RadioButtonFor(b => b.EstadoCivil, "Soltero/a")
+    @Html.Label("Casado/a")
+    @Html.RadioButtonFor(b => b.EstadoCivil, "Casado/a")
+    @Html.Label("Union Libre")
+    @Html.RadioButtonFor(b => b.EstadoCivil, "Union Libre")
+    @Html.Label("Viudo")
+    @Html.RadioButtonFor(b => b.EstadoCivil, "Viudo")
+    <br />
+
+
+    @Html.LabelFor(a => a.Soccer)
+    @Html.CheckBoxFor(b => b.Soccer, "")
+    @Html.LabelFor(a => a.Cantar)
+    @Html.CheckBoxFor(b => b.Cantar, "")
+    @Html.LabelFor(a => a.Bailar)
+    @Html.CheckBoxFor(b => b.Bailar, "")
+    @Html.LabelFor(a => a.Correr)
+    @Html.CheckBoxFor(b => b.Correr, "")
+
+
+
+    <input type="file" name="foto" />
+    <input type="submit" value="ACEPTAR" />
+}
+

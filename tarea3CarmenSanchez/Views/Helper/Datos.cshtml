@@ -1,0 +1,26 @@
+﻿@model tarea3CarmenSanchez.Models.Persona
+@{
+    ViewBag.Title = "Datos";
+}
+
+<h2>Datos</h2>
+
+
+<h3>@Model.Cedula</h3>
+<h3>@Model.Nombre</h3>
+<h3>@Model.Apellido</h3>
+<h3>@Model.Edad</h3>
+<h3>@Model.Telefono</h3>
+<h3>@Model.Correo</h3>
+<h3>@Model.EstadoCivil</h3>
+<h3>@Model.Gender</h3>
+@if (Model.Soccer == true)
+{<h3>Soccer</h3>}
+@if (Model.Bailar == true)
+{<h3>Bailar</h3>}
+@if (Model.Cantar == true)
+{<h3>Cantar</h3>}
+@if (Model.Correr == true)
+{<h3>Correr</h3>}
+
+<img src="~/img/@ViewBag.picture" width="300" height="300" />
